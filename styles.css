@@ -155,7 +155,7 @@ h1{
   height: 30px;
   position: absolute;
   bottom: 10px;
-  right: 0;
+  right: calc((100% - 288px)/2);
 }
 
 .project-tags{
@@ -257,10 +257,10 @@ background-color: #feada6;
   transition: all 0.5s linear;
 }
 .skill-box:nth-child(odd){
-  bottom: 101%;
+  bottom: 110%;
 }
 .skill-box:nth-child(even){
-  top: 105%;
+  top: 110%;
 }
 
 .show-skill-odd{
@@ -345,6 +345,9 @@ text-align: right;
   .desktop-img{
     height: 175px;
     width: 325px;
+  }
+  .git-repo{
+    right: calc((100% - 325px)/2);
   }
 .projects-content h1{
   font-size: 70px
