@@ -7,6 +7,7 @@ body{
 nav{
   position: fixed;
   width: 0;
+  z-index: 3;
 }
 
 p{
@@ -53,7 +54,6 @@ p{
 .show-nav{
   background-color: #feada6;
   height: 100vh;
-  z-index: 1;
   -webkit-transition: height background-color;
   -webkit-transition-duration: 0.5s;
   -webkit-transition-timing-function: steps(10, end);

@@ -156,9 +156,9 @@ function scrollSmooth(section, direction, sectionPosition, windowPosition, heigh
   if (section === '#contact') {
     // scroll down until window reaches bottom
     let refreshId = setInterval(function() {
-      if (height - windowPosition > 31) {
+      if (height - windowPosition > 61) {
         window.scrollBy({
-          top: 30
+          top: 60
         });
         windowPosition = (document.documentElement.scrollTop || document.body.scrollTop) + window.innerHeight;
       } else {
@@ -169,22 +169,22 @@ function scrollSmooth(section, direction, sectionPosition, windowPosition, heigh
     // scroll up/down until window positionpasses position of element
     if (direction === 'down') {
       let refreshId = setInterval(function() {
-        if (sectionPosition < 6 && sectionPosition > -5) {
+        if (sectionPosition < 16 && sectionPosition > -15) {
           clearInterval(refreshId);
         } else {
           window.scrollBy({
-            top: 10
+            top: 30
           });
           sectionPosition = document.querySelector(section).getBoundingClientRect().y;
         }
       }, 1);
     } else {
       let refreshId = setInterval(function() {
-        if (sectionPosition < 6 && sectionPosition > -5) {
+        if (sectionPosition < 16 && sectionPosition > -15) {
           clearInterval(refreshId);
         } else {
           window.scrollBy({
-            top: -10
+            top: -30
           });
           sectionPosition = document.querySelector(section).getBoundingClientRect().y;
         }
