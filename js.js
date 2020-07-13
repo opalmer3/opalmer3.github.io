@@ -136,6 +136,17 @@ document.querySelectorAll('.nav-item, .work-btn').forEach(element => {
     } else if (sectionPosition < 0) {
       scrollSmooth(section, 'up', sectionPosition, windowPosition, height);
     }
+
+    // Close nav menu on mobile after scrolling
+    let navMenu = document.querySelector(".nav-list");
+    let navBar = document.querySelector('nav');
+    navMenu.classList.remove('show-nav');
+    //Remove nav width so it doesnt cover clickable elements after transition finished
+    setTimeout(function() {
+      navBar.removeAttribute('style');
+    }, 500);
+
+    navMenu.setAttribute('data-status', 'up');
   });
 });
 
@@ -144,8 +155,8 @@ function scrollSmooth(section, direction, sectionPosition, windowPosition, heigh
   // if contact section just scroll to the bottom
   if (section === '#contact') {
     // scroll down until window reaches bottom
-    var refreshId = setInterval(function() {
-      if (windowPosition != height) {
+    let refreshId = setInterval(function() {
+      if (height - windowPosition > 31) {
         window.scrollBy({
           top: 30
         });
