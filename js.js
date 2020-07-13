@@ -169,22 +169,22 @@ function scrollSmooth(section, direction, sectionPosition, windowPosition, heigh
     // scroll up/down until window positionpasses position of element
     if (direction === 'down') {
       let refreshId = setInterval(function() {
-        if (sectionPosition < 16 && sectionPosition > -15) {
+        if (sectionPosition < 31 && sectionPosition > -30) {
           clearInterval(refreshId);
         } else {
           window.scrollBy({
-            top: 30
+            top: 60
           });
           sectionPosition = document.querySelector(section).getBoundingClientRect().y;
         }
       }, 1);
     } else {
       let refreshId = setInterval(function() {
-        if (sectionPosition < 16 && sectionPosition > -15) {
+        if (sectionPosition < 31 && sectionPosition > -30) {
           clearInterval(refreshId);
         } else {
           window.scrollBy({
-            top: -30
+            top: -60
           });
           sectionPosition = document.querySelector(section).getBoundingClientRect().y;
         }
